@@ -1,2 +1,4 @@
-My attempts at solving the crypto problems at https://cryptopals.com/ and refreshing python skills
+My attempts at the crypto problems at https://cryptopals.com
+Gotchas at http://karanrawat.in (If I got around to it)
+
 
