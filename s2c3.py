@@ -12,18 +12,18 @@ def random_key(len):
         key+=chr(random.randrange(0,256))
     return key
 
-def oracle(data): #ECB=true, CBC=false
+def oracle(data,offset=5): #ECB=true, CBC=false
     chunksize=16
-    all_repeats=[0]
-    for offset in range(0,5):
+    #all_repeats=[0]
+    for offset in range(0,offset):
         chunks=sets.Set()
-        repeats=0
+        #repeats=0
         for chunk in [data[i+offset:i+offset+chunksize] for i in range(0,len(data),chunksize)]:
             if chunk in chunks:
                 return True #if duplicate chunk found then ECB
             else:
                 chunks.add(chunk)
-        all_repeats.append(repeats)
+        #all_repeats.append(repeats)
     return False #(max(all_repeats)>0) #CBC
 
 if __name__ == '__main__':
